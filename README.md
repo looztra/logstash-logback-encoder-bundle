@@ -8,6 +8,17 @@ Logstash Logback Encoder Bundle
 
 Greatly inspired by the [Gelf bundle](https://github.com/gini/dropwizard-gelf) for dropwizard.
 
+Get it
+------
+
+No release version available for now (working on it). Snapshots are available in [Sonatype OSS snapshots repo](https://oss.sonatype.org/index.html)
+
+	<dependency>
+	  <groupId>net.devlab722</groupId>
+	  <artifactId>logstash-logback-encoder-bundle</artifactId>
+	  <version>1.0.0-SNAPSHOT</version>
+	</dependency>
+
 Usage
 -----
 
@@ -35,3 +46,4 @@ Configuration
 -------------
 
 TODO
+
