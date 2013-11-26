@@ -6,10 +6,14 @@
     <artifactId>logstash-logback-encoder-bundle</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
-
     <name>Logstash Logback Encoder bundle for Dropwizard</name>
     <description>Addon bundle for Dropwizard to support logging in json format that can be consumed as-is by tools like Logstash or Graylog2</description>
     <url>https://github.com/looztra/logstash-logback-encoder-bundle</url>
+    <parent>
+        <groupId>org.sonatype.oss</groupId>
+        <artifactId>oss-parent</artifactId>
+        <version>7</version>
+    </parent>
     <licenses>
         <license>
             <name>Apache 2.0</name>
@@ -18,8 +22,8 @@
         </license>
     </licenses>
     <scm>
-        <developerConnection>scm:git:git@github.com:looztra/logstash-logback-encoder-bundle.git</developerConnection>
-        <connection>scm:git@github.com:looztra/logstash-logback-encoder-bundle.git</connection>
+        <developerConnection>scm:git:https://github.com/looztra/logstash-logback-encoder-bundle.git</developerConnection>
+        <connection>scm:git:https://github.com/looztra/logstash-logback-encoder-bundle.git</connection>
         <url>https://github.com/looztra/logstash-logback-encoder-bundle</url>
         <tag>HEAD</tag>
     </scm>
@@ -103,7 +107,6 @@
                     </execution>
                 </executions>
             </plugin>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
@@ -128,23 +131,39 @@
                 <artifactId>versions-maven-plugin</artifactId>
                 <version>${maven-versions-plugin.version}</version>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-gpg-plugin</artifactId>
-                <version>${maven-gpg-plugin.version}</version>
-                <executions>
-                    <execution>
-                        <id>sign-artifacts</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>sign</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <keyname>christophe.furmaniak@gmail.com</keyname>
-                </configuration>
-            </plugin>
+
         </plugins>
     </build>
+    <profiles>
+        <profile>
+            <id>release-sign-artifacts</id>
+            <activation>
+                <property>
+                    <name>performRelease</name>
+                    <value>true</value>
+                </property>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>${maven-gpg-plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <keyname>christophe.furmaniak@gmail.com</keyname>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>

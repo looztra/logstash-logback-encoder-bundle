@@ -1,4 +1,4 @@
-package devlab722.dropwizard.bundle;
+package net.devlab722.dropwizard.bundle;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.yammer.dropwizard.config.LoggingConfiguration;
