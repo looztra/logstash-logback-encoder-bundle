@@ -12,5 +12,5 @@ import lombok.Data;
 @Data
 public class LogstashLogbackEncoderConfiguration extends LoggingConfiguration.FileConfiguration {
     @JsonProperty
-    private boolean includeCallerInfo = true;
+    private boolean includeCallerInfo = false;
 }

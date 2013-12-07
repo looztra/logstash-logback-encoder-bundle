@@ -31,7 +31,6 @@ public abstract class LogstashLogbackEncoderBundle<T extends Configuration> impl
             jsonFileAppender.setEncoder(logstashEncoder);
             jsonFileAppender.start();
             root.addAppender(AsyncAppender.wrap(jsonFileAppender));
-
         }
     }
 
