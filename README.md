@@ -16,7 +16,7 @@ No release version available for now (working on it). Snapshots are available in
 	<dependency>
 	  <groupId>net.devlab722</groupId>
 	  <artifactId>logstash-logback-encoder-bundle</artifactId>
-	  <version>1.0.0-SNAPSHOT</version>
+	  <version>0.6.2-SNAPSHOT</version>
 	</dependency>
 
 Usage
@@ -24,7 +24,8 @@ Usage
 
 The Logstash Logback Encoder Bundle consists in a [ConfiguredBundle](http://dropwizard.codahale.com/maven/apidocs/com/yammer/dropwizard/ConfiguredBundle.html).
 
-To enable the `LogstashLogbackEncoderBundle` simply add the following code to your [Service](http://dropwizard.codahale.com/maven/apidocs/com/yammer/dropwizard/Service.html)'s
+To enable the `LogstashLogbackEncoderBundle` and specify which part of your configuration will support the
+bundler configuration, simply add the following code to your [Service](http://dropwizard.codahale.com/maven/apidocs/com/yammer/dropwizard/Service.html)'s
 [initialize method](http://dropwizard.codahale.com/maven/apidocs/com/yammer/dropwizard/Service.html#initialize%28com.yammer.dropwizard.config.Bootstrap%29):
 
     @Override
@@ -40,10 +41,14 @@ To enable the `LogstashLogbackEncoderBundle` simply add the following code to yo
 You also need to add a field for `LogstashLogbackEncoderConfiguration` to your own [Configuration](http://dropwizard.codahale.com/maven/apidocs/com/yammer/dropwizard/config/Configuration.html)
 class.
 
-TODO: provide a sample project using the `LogstashLogbackEncoderBundle`
+You can have a look at a sample project using it available at https://bitbucket.org/looztra/dropwizzardsample (see [configuration file](https://bitbucket.org/looztra/dropwizzardsample/src/f2713ee1722bbe6b90c550f60a7b03a74427226d/hello-world.yml?at=default)
+ and [service java file](https://bitbucket.org/looztra/dropwizzardsample/src/f2713ee1722bbe6b90c550f60a7b03a74427226d/src/main/java/net/kalaari/wizard/HelloWorldService.java?at=default)
+
 
 Configuration
 -------------
 
-TODO
+The `LogstashLogbackEncoderConfiguration` inherits its properties from the `LoggingConfiguration.FileConfiguration`
+and provides an additionnal property `includeCallerInfo` to include or not the callerInfo (*warning* getting the
+callerInfo is an expensive operation that should not be set to true on production environments)
 
