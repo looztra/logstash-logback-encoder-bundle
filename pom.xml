@@ -4,7 +4,7 @@
 
     <groupId>net.devlab722</groupId>
     <artifactId>logstash-logback-encoder-bundle</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>0.6.2-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>Logstash Logback Encoder bundle for Dropwizard</name>
     <description>Addon bundle for Dropwizard to support logging in json format that can be consumed as-is by tools like Logstash or Graylog2</description>
@@ -57,6 +57,7 @@
         <maven-release-plugin.version>2.4.2</maven-release-plugin.version>
         <maven-versions-plugin.version>2.1</maven-versions-plugin.version>
         <maven-gpg-plugin.version>1.4</maven-gpg-plugin.version>
+        <assertj-core.version>1.5.0</assertj-core.version>
     </properties>
 
     <dependencies>
@@ -81,6 +82,11 @@
             <artifactId>testng</artifactId>
             <version>${testng.version}</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>${assertj-core.version}</version>
         </dependency>
     </dependencies>
     <build>
