@@ -1,10 +1,9 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>net.devlab722</groupId>
     <artifactId>logstash-logback-encoder-bundle</artifactId>
-    <version>0.6.2-SNAPSHOT</version>
+    <version>0.6.2</version>
     <packaging>jar</packaging>
     <name>Logstash Logback Encoder bundle for Dropwizard</name>
     <description>Addon bundle for Dropwizard to support logging in json format that can be consumed as-is by tools like Logstash or Graylog2</description>
@@ -25,7 +24,7 @@
         <developerConnection>scm:git:https://github.com/looztra/logstash-logback-encoder-bundle.git</developerConnection>
         <connection>scm:git:https://github.com/looztra/logstash-logback-encoder-bundle.git</connection>
         <url>https://github.com/looztra/logstash-logback-encoder-bundle</url>
-        <tag>HEAD</tag>
+        <tag>logstash-logback-encoder-bundle-0.6.2</tag>
     </scm>
     <ciManagement>
         <system>Travis CI</system>
