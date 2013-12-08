@@ -26,7 +26,7 @@ Usage
 The Logstash Logback Encoder Bundle consists in a [ConfiguredBundle](http://dropwizard.codahale.com/maven/apidocs/com/yammer/dropwizard/ConfiguredBundle.html).
 
 To enable the `LogstashLogbackEncoderBundle` and specify which part of your configuration will support the
-bundler configuration, simply add the following code to your [Service](http://dropwizard.codahale.com/maven/apidocs/com/yammer/dropwizard/Service.html)'s
+bundle configuration, simply add the following code to your [Service](http://dropwizard.codahale.com/maven/apidocs/com/yammer/dropwizard/Service.html)'s
 [initialize method](http://dropwizard.codahale.com/maven/apidocs/com/yammer/dropwizard/Service.html#initialize%28com.yammer.dropwizard.config.Bootstrap%29):
 ```java
     @Override
