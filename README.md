@@ -13,12 +13,13 @@ Get it
 
 No release version available for now (working on it). Snapshots are available in [Sonatype OSS snapshots repo](https://oss.sonatype.org/index.html)
 
+```xml
 	<dependency>
 	  <groupId>net.devlab722</groupId>
 	  <artifactId>logstash-logback-encoder-bundle</artifactId>
 	  <version>0.6.2-SNAPSHOT</version>
 	</dependency>
-
+```
 Usage
 -----
 
@@ -27,7 +28,7 @@ The Logstash Logback Encoder Bundle consists in a [ConfiguredBundle](http://drop
 To enable the `LogstashLogbackEncoderBundle` and specify which part of your configuration will support the
 bundler configuration, simply add the following code to your [Service](http://dropwizard.codahale.com/maven/apidocs/com/yammer/dropwizard/Service.html)'s
 [initialize method](http://dropwizard.codahale.com/maven/apidocs/com/yammer/dropwizard/Service.html#initialize%28com.yammer.dropwizard.config.Bootstrap%29):
-
+```java
     @Override
     public void initialize(Bootstrap<MyServiceConfiguration> bootstrap) {
         bootstrap.addBundle(new LogstashLogbackEncoderBundle<MyServiceConfiguration>() {
@@ -37,7 +38,7 @@ bundler configuration, simply add the following code to your [Service](http://dr
                 }
             });
     }
-
+```
 You also need to add a field for `LogstashLogbackEncoderConfiguration` to your own [Configuration](http://dropwizard.codahale.com/maven/apidocs/com/yammer/dropwizard/config/Configuration.html)
 class.
 
