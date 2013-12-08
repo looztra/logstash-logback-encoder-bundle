@@ -11,13 +11,13 @@ Greatly inspired by the [Gelf bundle](https://github.com/gini/dropwizard-gelf) f
 Get it
 ------
 
-No release version available for now (working on it). Snapshots are available in [Sonatype OSS snapshots repo](https://oss.sonatype.org/index.html)
+0.6.2 release version available. Snapshots are available in [Sonatype OSS snapshots repo](https://oss.sonatype.org/index.html)
 
 ```xml
 	<dependency>
 	  <groupId>net.devlab722</groupId>
 	  <artifactId>logstash-logback-encoder-bundle</artifactId>
-	  <version>0.6.2-SNAPSHOT</version>
+	  <version>0.6.2</version>
 	</dependency>
 ```
 Usage
@@ -53,3 +53,7 @@ The `LogstashLogbackEncoderConfiguration` inherits its properties from the `Logg
 and provides an additionnal property `includeCallerInfo` to include or not the callerInfo (*warning* getting the
 callerInfo is an expensive operation that should not be set to true on production environments)
 
+TODO
+----
+
+* provide adjustments for the upcoming 0.7.0 version of dropwizard
